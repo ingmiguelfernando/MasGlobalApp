@@ -1,0 +1,45 @@
+﻿@model IEnumerable<IEmployee>
+
+<div>
+    <h2>Employees</h2>
+    <form method="post">
+        <input type="number" id="employeeId" name="employeeId" />
+        <button class="btn btn-success" value="Find">Search</button>
+    </form>
+
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Contract Type</th>
+            <th scope="col">Role Name</th>
+            <th scope="col">Role Description</th>
+            <th scope="col">Hourly Salary</th>
+            <th scope="col">Monthly Salary</th>
+            <th scope="col">Annual Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+
+            @foreach (var e in Model)
+            {
+        <tr>
+            <th scope="row">@e.Id</th>
+            <td>@e.Name</td>
+            <td>@e.ContractTypeName</td>
+            <td>@e.RoleName</td>
+            <td>@e.RoleDescription</td>
+            <td>@e.HourlySalary</td>
+            <td>@e.MonthlySalary</td>
+            <td>@e.AnnualSalary</td>
+        </tr>
+            }
+        }
+    </tbody>
+</table>
+
